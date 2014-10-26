@@ -14,4 +14,6 @@
 
 .universal-bar ul.menu.inline-list li > a{
 	line-height:45px;
+	color:black;
+	padding:0 1rem;
 }
