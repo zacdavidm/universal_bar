@@ -1,0 +1,20 @@
+<?php
+
+function universal_bar_page_alter(&$page){
+  
+    $page['page_top']['universal_bar']=array(
+    '#markup'=>
+    '<div class="universal-bar">
+		<div class="row">
+			<div class="large-12 column">
+				<a>Name</a>
+				<a>Sites</a>
+				<a>Notifications</a>
+				<a>Sign Out</a>
+			</div>
+		</div>
+    </div>',
+    '#weight' => 26,
+    );
+
+}
