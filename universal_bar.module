@@ -5,7 +5,7 @@ function universal_bar_page_alter(&$page){
 	if(user_is_logged_in()){
 		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/logout">Sign Out</a>';
 	}else{
-		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/login>Sign In</a>';
+		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/login">Sign In</a>';
 	}
     $page['page_top']['universal_bar']=array(
     '#markup'=>
