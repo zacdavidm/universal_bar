@@ -1,16 +1,22 @@
 <?php
 
 function universal_bar_page_alter(&$page){
-  
+	$account_in_out;
+	if($logged_in){
+		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/logout">Sign Out</a>';
+	}else{
+		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/login>Sign In</a>';
+	}
     $page['page_top']['universal_bar']=array(
     '#markup'=>
     '<div class="universal-bar">
 		<div class="row">
 			<div class="large-12 column">
-				<a>Name</a>
-				<a>Sites</a>
-				<a>Notifications</a>
-				<a>Sign Out</a>
+				<div class="right">
+					<a>Sites</a>
+					<a>Notifications</a>
+					'.$account_in_out.'					
+				</div>
 			</div>
 		</div>
     </div>',
