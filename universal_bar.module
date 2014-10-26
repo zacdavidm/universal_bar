@@ -12,7 +12,7 @@ function universal_bar_page_alter(&$page){
     '<div class="universal-bar">
 		<div class="row">
 			<div class="right">
-				<ul class="menu inline">
+				<ul class="menu inline-list">
 					<li><a>Sites</a></li>
 					<li><a>Notifications</a></li>
 					<li>'.$account_in_out.'</li>
