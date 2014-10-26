@@ -11,12 +11,12 @@ function universal_bar_page_alter(&$page){
     '#markup'=>
     '<div class="universal-bar">
 		<div class="row">
-			<div class="large-12 column">
-				<div class="right">
-					<a>Sites</a>
-					<a>Notifications</a>
-					'.$account_in_out.'					
-				</div>
+			<div class="right">
+				<ul class="menu inline">
+					<li><a>Sites</a></li>
+					<li><a>Notifications</a></li>
+					<li>'.$account_in_out.'</li>
+				</ul>					
 			</div>
 		</div>
     </div>',

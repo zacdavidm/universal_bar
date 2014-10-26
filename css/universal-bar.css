@@ -1,3 +1,15 @@
 .universal-bar{
 	background-color:#60ae2b;
 }
+
+.universal-bar ul.menu.inline{
+	overflow:hidden;
+}
+
+.universal-bar ul.menu.inline li{
+	float:left;
+}
+
+.universal-bar ul.menu.inline li > a{
+	line-height:45px;
+}
