@@ -3,6 +3,7 @@
 function universal_bar_page_alter(&$page){
 	$account_in_out;
 	if(user_is_logged_in()){
+		$account_user='<li><a href="https://forgoodinc.pairsite.com/user">Account</a></li>';
 		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/logout">Sign Out</a>';
 	}else{
 		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/login">Sign In</a>';
@@ -13,8 +14,9 @@ function universal_bar_page_alter(&$page){
 		<div class="row">
 			<div class="right">
 				<ul class="menu inline-list">
-					<li><a>Sites</a></li>
-					<li><a>Notifications</a></li>
+					'.$account_user.'
+					<li><a title="Sites"><i class="fa fa-th"><span class="element-invisible">Sites</span></i></a></li>
+					<li><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i></a></li>
 					<li>'.$account_in_out.'</li>
 				</ul>					
 			</div>
