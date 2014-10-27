@@ -8,6 +8,16 @@ function universal_bar_page_alter(&$page){
 	}else{
 		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/login">Sign In</a>';
 	}
+	$sites_list='
+	<div class="display-panel">
+		<ul class="sites-list menu">
+			<li><a href="http://forgoodstudios.org">Forgood Studios</a></li>
+			<li><a href="http://housing.forgoodstudios.org">Forgood Housing</a></li>
+			<li><a href="http://reddit.com/r/forgoodideas">Forgood Ideas</a></li>
+			<li><a href="http://forgoodinc.pairsite.com">Forgood Accounts</a></li>
+			<li><a href="http://redjacketarts.com">Redjacket Arts</a></li>
+		</ul>
+	</div>';
     $page['page_top']['universal_bar']=array(
     '#markup'=>
     '<div class="universal-bar">
@@ -15,7 +25,9 @@ function universal_bar_page_alter(&$page){
 			<div class="right">
 				<ul class="menu inline-list">
 					'.$account_user.'
-					<li><a title="Sites"><i class="fa fa-th"><span class="element-invisible">Sites</span></i></a></li>
+					<li><a title="Sites"><i class="fa fa-th"><span class="element-invisible">Sites</span></i></a>
+						'.$sites_list.'
+					</li>
 					<li><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i></a></li>
 					<li>'.$account_in_out.'</li>
 				</ul>					
