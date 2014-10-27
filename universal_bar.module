@@ -2,7 +2,7 @@
 
 function universal_bar_page_alter(&$page){
 	$account_in_out;
-	$account_user;
+	$account_user="";;
 	if(user_is_logged_in()){
 		$account_user='<li><a href="https://forgoodinc.pairsite.com/user">Account</a></li>';
 		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/logout">Sign Out</a>';
@@ -19,6 +19,7 @@ function universal_bar_page_alter(&$page){
 			<li><a href="http://redjacketarts.com">Redjacket Arts</a></li>
 		</ul>
 	</div>';
+	$notifications='<div class="display-panel"><strong>Notifications Coming Soon!</strong></div>';
     $page['page_top']['universal_bar']=array(
     '#markup'=>
     '<div class="universal-bar">
@@ -29,7 +30,9 @@ function universal_bar_page_alter(&$page){
 					<li id="toggle-sites-list"><a title="Sites"><i class="fa fa-th"><span class="element-invisible">Sites</span></i></a>
 						'.$sites_list.'
 					</li>
-					<li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i></a></li>
+					<li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i></a>
+						'.$notifications.'
+					</li>
 					<li>'.$account_in_out.'</li>
 				</ul>					
 			</div>
