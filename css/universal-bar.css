@@ -43,3 +43,7 @@
 	right: 0;
 	z-index: 9;
 }
+
+.universal-bar ul.menu.inline-list li.active-display-panel .display-panel{
+	display:block;
+}

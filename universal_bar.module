@@ -25,10 +25,10 @@ function universal_bar_page_alter(&$page){
 			<div class="right">
 				<ul class="menu inline-list">
 					'.$account_user.'
-					<li><a title="Sites"><i class="fa fa-th"><span class="element-invisible">Sites</span></i></a>
+					<li id="toggle-sites-list"><a title="Sites"><i class="fa fa-th"><span class="element-invisible">Sites</span></i></a>
 						'.$sites_list.'
 					</li>
-					<li><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i></a></li>
+					<li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i></a></li>
 					<li>'.$account_in_out.'</li>
 				</ul>					
 			</div>
