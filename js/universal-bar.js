@@ -7,14 +7,14 @@ jQuery(function() {
     nodes=jqXHR.responseJSON.nodes;
     for(i=0;i<nodes.length;i++){
       jQuery('#notifications').append(
-        '<div class="notif-ications>"',
-        nodes[i].node.nothing,
+        '<div class="notif-ications>"'+
+        nodes[i].node.nothing+
         '</div>'
       );
     }
     jQuery('#toggle-notifications > a').append(
-    '<span class="notification-count">',
-    i,
+    '<span class="notification-count">'+
+    i+
     '</span>'
     );
   });
