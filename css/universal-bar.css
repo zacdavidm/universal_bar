@@ -1,5 +1,6 @@
 .universal-bar{
 	background-color:#60ae2b;
+	height:45px;
 }
 
 .universal-bar ul.menu.inline-list{
@@ -23,6 +24,8 @@
 	background-color: #c42b2b;
 	padding: .25rem;
 	font-size: .75rem;
+	position:relative;
+	top:-.5rem;
 }
 
 .universal-bar ul.menu.inline-list li.active-display-panel::after{

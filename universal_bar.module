@@ -7,6 +7,7 @@ function universal_bar_page_alter(&$page){
 		$account_user='<li><a href="https://forgoodinc.pairsite.com/user">Account</a></li>';
 		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/logout">Sign Out</a>';
 	}else{
+		$account_user='<li><a href="https://forgoodinc.pairsite.com/user/register">Create Account</a></li>';
 		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/login">Sign In</a>';
 	}
 	$sites_list='
