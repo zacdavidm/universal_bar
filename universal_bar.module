@@ -20,7 +20,13 @@ function universal_bar_page_alter(&$page){
 			<li><a href="http://redjacketarts.com">Redjacket Arts</a></li>
 		</ul>
 	</div>';
-	$notifications='<div class="display-panel" id="notifications"></div>';
+	$notifications=
+	'<div class="display-panel">
+	<div id="notifications"></div>
+	<div class="display-panel-footer">
+		<a href="https://forgoodinc.pairsite.com/notifications">Notifications Manager</a>
+	</div>
+	</div>';
     $page['page_top']['universal_bar']=array(
     '#markup'=>
     '<div class="universal-bar">
