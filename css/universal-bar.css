@@ -24,6 +24,10 @@
 	height:45px;
 }
 
+universal-bar ul.menu.inline-list > li > a.button{
+	margin-bottom:0;
+}
+
 .notif-count{
 	background-color: #c42b2b;
 	padding: .25rem;
