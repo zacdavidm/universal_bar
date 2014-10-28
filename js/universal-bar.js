@@ -19,7 +19,6 @@ jQuery(function() {
     );
   });
 
-  jQuery('.notif-ication-wrapper .flag-read-wrapper a.flag-link-toggle').on('click', function(){
-    jQuery(this).closest('.flag-read-wrapper').toggeClass('read').toggleClass('unread');
+  jQuery('.notif-ication-wrapper .flag-read-wrapper a.flag-link-toggle').on('click', function(){jQuery(this).closest('.flag-read-wrapper').toggleClass('read').toggleClass('unread');
   });
 });
