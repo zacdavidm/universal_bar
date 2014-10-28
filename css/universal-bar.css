@@ -91,3 +91,35 @@
 	font-size:.875rem;
 	color:#888;
 }
+
+.notif-ication-wrapper{
+	position:relative;
+}
+
+.notif-ication-wrapper .notif-ication a{
+	padding-right:2rem;
+}
+
+.notif-ication-wrapper .flag-read-wrapper{
+	position:absolute;
+	top:.5rem;
+	right:.5rem;
+}
+
+.notif-ication-wrapper .flag-read-wrapper a.flag-link-toggle {
+	display: block;
+	position: absolute;
+	text-indent: -9999px;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.notif-ication-wrapper .flag-read-wrapper.read .fa-circle-0{
+	display:none;
+}
+
+.notif-ication-wrapper .flag-read-wrapper.unread .fa-circle{
+	display:none;
+}
