@@ -106,14 +106,18 @@
 	right:.5rem;
 }
 
-.notif-ication-wrapper .flag-read-wrapper a.flag-link-toggle {
+.notif-ication-wrapper .flag-read-wrapper .flag-wrapper,
+.notif-ication-wrapper .flag-read-wrapper a.flag-link-toggle{
 	display: block;
 	position: absolute;
-	text-indent: -9999px;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
+}
+
+.notif-ication-wrapper .flag-read-wrapper a.flag-link-toggle{
+		text-indent:9999px;
 }
 
 .notif-ication-wrapper .flag-read-wrapper.read .fa-circle-0{
