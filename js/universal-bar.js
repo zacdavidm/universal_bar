@@ -8,7 +8,7 @@ jQuery(function() {
     notifs=0;
     for(i=0;i<nodes.length;i++){
       if(nodes[i].node.flagged=="unread"){
-        nofifs++;
+        notifs++;
       }
       jQuery('#notifications').append(
         '<div class="notif-ication">'+
