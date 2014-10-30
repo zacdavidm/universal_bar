@@ -5,7 +5,11 @@ jQuery(function() {
 
   jQuery.getJSON( "https://forgoodinc.pairsite.com/notifications/embed.json", function(response, status, jqXHR){
     nodes=jqXHR.responseJSON.nodes;
+    notifs=0;
     for(i=0;i<nodes.length;i++){
+      if(nodes[i].node.flagged=="unread"){
+        nofifs++;
+      }
       jQuery('#notifications').append(
         '<div class="notif-ication">'+
         nodes[i].node.nothing+
@@ -14,7 +18,7 @@ jQuery(function() {
     }
     jQuery('#toggle-notifications > a').append(
     '<span class="notif-count">'+
-    i+
+    notifs+
     '</span>'
     );
   });

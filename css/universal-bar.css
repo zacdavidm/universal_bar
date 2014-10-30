@@ -120,10 +120,10 @@
 		text-indent:9999px;
 }
 
-.notif-ication-wrapper .flag-read-wrapper.read .fa-circle-o{
+.notif-ication-wrapper .flag-read-wrapper.unread .fa-circle-o{
 	display:none;
 }
 
-.notif-ication-wrapper .flag-read-wrapper.unread .fa-circle{
+.notif-ication-wrapper .flag-read-wrapper.read .fa-circle{
 	display:none;
 }
