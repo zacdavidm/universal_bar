@@ -37,11 +37,11 @@ function universal_bar_page_alter(&$page){
 					<li id="toggle-sites-list"><a title="Sites"><i class="fa fa-th"><span class="element-invisible">Sites</span></i></a>
 						'.$sites_list.'
 					</li>
-					<li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i></a>
+					<li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i><span class="notif-count"></span></a>
 						'.$notifications.'
 					</li>
 					<li>'.$account_in_out.'</li>
-				</ul>					
+				</ul>
 			</div>
 		</div>
     </div>',

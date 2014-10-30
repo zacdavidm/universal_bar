@@ -6,7 +6,11 @@ jQuery(function() {
   function update_notifications(){
     jQuery.getJSON( "https://forgoodinc.pairsite.com/notifications/embed.json", function(response, status, jqXHR){
       nodes=jqXHR.responseJSON.nodes;
+
+      jQuery('#notifications').innerHTML('');
+      jQuery('#toggle-notifications > a .notif-count').innerHTML('');
       notifs=0;
+
       for(i=0;i<nodes.length;i++){
         if(nodes[i].node.flagged=="unread"){
           notifs++;
@@ -18,11 +22,7 @@ jQuery(function() {
         );
       }
       if(notifs>0){
-          jQuery('#toggle-notifications > a').append(
-          '<span class="notif-count">'+
-          notifs+
-          '</span>'
-          );
+          jQuery('#toggle-notifications > a .notif-count').innerHTML(notifs);
       }
     });
   }
@@ -31,7 +31,7 @@ jQuery(function() {
     update_notifications();
   });update_notifications();
 
-  jQuery('.notif-ication-wrapper .flag-read-wrapper').on('click', 'a.flag-link-toggle', function(){jQuery(this).closest('.flag-read-wrapper').toggleClass('read').toggleClass('unread').prev().children('a').toggleClass('read').toggleClass('unread');
+  jQuery('.notif-ication-wrapper .flag-read-wrapper').on('click', 'a.flag-link-toggle', function(){jQuery(this).closest('.flag-read-wrapper').toggleClass('read unread').prev().children('a').toggleClass('read unread');
   update_notifications();
   });
 });
