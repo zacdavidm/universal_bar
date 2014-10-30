@@ -16,13 +16,16 @@ jQuery(function() {
         '</div>'
       );
     }
-    jQuery('#toggle-notifications > a').append(
-    '<span class="notif-count">'+
-    notifs+
-    '</span>'
-    );
+    if(notifs>0){
+        jQuery('#toggle-notifications > a').append(
+        '<span class="notif-count">'+
+        notifs+
+        '</span>'
+        );
+    }
+
   });
 
-  jQuery('.notif-ication-wrapper .flag-read-wrapper').on('click', 'a.flag-link-toggle', function(){jQuery(this).closest('.flag-read-wrapper').toggleClass('read').toggleClass('unread');
+  jQuery('.notif-ication-wrapper .flag-read-wrapper').on('click', 'a.flag-link-toggle', function(){jQuery(this).closest('.flag-read-wrapper').toggleClass('read').toggleClass('unread').prev().toggleClass('read').toggleClass('unread');
   });
 });
