@@ -7,8 +7,8 @@ jQuery(function() {
     jQuery.getJSON( "https://forgoodinc.pairsite.com/notifications/embed.json", function(response, status, jqXHR){
       nodes=jqXHR.responseJSON.nodes;
 
-      jQuery('#notifications').innerHTML('');
-      jQuery('#toggle-notifications > a .notif-count').innerHTML('');
+      jQuery('#notifications').html('');
+      jQuery('#toggle-notifications > a .notif-count').html('').hide();
       notifs=0;
 
       for(i=0;i<nodes.length;i++){
@@ -22,7 +22,7 @@ jQuery(function() {
         );
       }
       if(notifs>0){
-          jQuery('#toggle-notifications > a .notif-count').innerHTML(notifs);
+          jQuery('#toggle-notifications > a .notif-count').show().html(notifs);
       }
     });
   }
