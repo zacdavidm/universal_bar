@@ -4,11 +4,11 @@ function universal_bar_page_alter(&$page){
 	$account_in_out;
 	$account_user="";;
 	if(user_is_logged_in()){
-		$account_user='<li><a href="https://forgoodinc.pairsite.com/user">Account</a></li>';
-		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/logout">Sign Out</a>';
+		$account_user='<li><a href="https://forgoodaccounts.pairsite.com/user">Account</a></li>';
+		$account_in_out='<a href="https://forgoodaccounts.pairsite.com/user/logout">Sign Out</a>';
 	}else{
-		$account_user='<li><a href="https://forgoodinc.pairsite.com/user/register" class="button small">Create Account</a></li>';
-		$account_in_out='<a href="https://forgoodinc.pairsite.com/user/login">Sign In</a>';
+		$account_user='<li><a href="https://forgoodaccounts.pairsite.com/user/register" class="button small">Create Account</a></li>';
+		$account_in_out='<a href="https://forgoodaccounts.pairsite.com/user/login">Sign In</a>';
 	}
 	$sites_list='
 	<div class="display-panel">
@@ -16,15 +16,18 @@ function universal_bar_page_alter(&$page){
 			<li><a href="http://forgoodstudios.org">Forgood Studios</a></li>
 			<li><a href="http://housing.forgoodstudios.org">Forgood Housing</a></li>
 			<li><a href="http://reddit.com/r/forgoodideas">Forgood Ideas</a></li>
-			<li><a href="http://forgoodinc.pairsite.com">Forgood Accounts</a></li>
+			<li><a href="http://forgoodaccounts.pairsite.com">Forgood Accounts</a></li>
 			<li><a href="http://redjacketarts.com">Redjacket Arts</a></li>
 		</ul>
+		<div class="display-panel-footer">
+			<a href="https://forgoodaccounts.pairsite.com/site-descriptions">Site Descriptions</a>
+		</div>
 	</div>';
 	$notifications=
 	'<div class="display-panel">
 	<div id="notifications"></div>
 	<div class="display-panel-footer">
-		<a href="https://forgoodinc.pairsite.com/notifications">Notifications Manager</a>
+		<a href="https://forgoodaccounts.pairsite.com/notifications">Notifications Manager</a>
 	</div>
 	</div>';
     $page['page_top']['universal_bar']=array(

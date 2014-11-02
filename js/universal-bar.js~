@@ -4,7 +4,7 @@ jQuery(function() {
 	});
 
   function update_notifications(){
-    jQuery.getJSON( "https://forgoodaccounts.pairsite.com/notifications/embed.json", function(response, status, jqXHR){
+    jQuery.getJSON( "https://forgoodinc.pairsite.com/notifications/embed.json", function(response, status, jqXHR){
       nodes=jqXHR.responseJSON.nodes;
 
       jQuery('#notifications').html('');
