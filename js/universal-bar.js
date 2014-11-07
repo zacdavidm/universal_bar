@@ -25,13 +25,16 @@ jQuery(function() {
           jQuery('#toggle-notifications > a .notif-count').show().html(notifs);
       }
     });
-  }*/
+  }
 
   jQuery('#toggle-notifications').on('click',function(){
     update_notifications();
   });update_notifications();
 
+
   jQuery('.notif-ication-wrapper .flag-read-wrapper').on('click', 'a.flag-link-toggle', function(){jQuery(this).closest('.flag-read-wrapper').toggleClass('read unread').prev().children('a').toggleClass('read unread');
   update_notifications();
   });
+  */
+
 });
