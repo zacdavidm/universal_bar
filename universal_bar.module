@@ -13,7 +13,7 @@ function curPageURL() {
 }
 function universal_bar_page_alter(&$page){
 	$mod_path="/".drupal_get_path('module', 'universal_bar');
-	
+
 	$account_in_out;
 	$account_user="";
 	$feedback_ref=urlencode(curPageURL());
@@ -54,9 +54,9 @@ function universal_bar_page_alter(&$page){
 					<li id="toggle-sites-list"><a title="Sites"><i class="fa fa-th"><span class="element-invisible">Sites</span></i></a>
 						'.$sites_list.'
 					</li>
-					<li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i><span class="notif-count"></span></a>
+					<!--li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i><span class="notif-count"></span></a>
 						'.$notifications.'
-					</li>
+					</li-->
 					<li><a href="https://forgoodaccounts.pairsite.com/feedback?ref='.$feedback_ref.'" title="Feedback"><i class="fa fa-question-circle"><span class="element-invisible">Feedback</span></i></a>
 						'.$notifications.'
 					</li>
