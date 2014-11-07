@@ -1,4 +1,7 @@
 <?php
+
+$mod_path="/".drupal_get_path('module', 'universal_bar');
+
 function curPageURL() {
  $pageURL = 'http';
  if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"]== "on") {$pageURL .= "s";}
@@ -11,6 +14,7 @@ function curPageURL() {
  return $pageURL;
 }
 function universal_bar_page_alter(&$page){
+	
 	$account_in_out;
 	$account_user="";
 	$feedback_ref=urlencode(curPageURL());
@@ -24,11 +28,11 @@ function universal_bar_page_alter(&$page){
 	$sites_list='
 	<div class="display-panel">
 		<ul class="sites-list small-block-grid-1 menu">
-			<li><a href="http://forgoodstudios.org">Forgood Studios</a></li>
-			<li><a href="http://housing.forgoodstudios.org">Forgood Housing</a></li>
-			<li><a href="http://reddit.com/r/forgoodideas">Forgood Ideas</a></li>
-			<li><a href="http://forgoodaccounts.pairsite.com">Forgood Accounts</a></li>
-			<li><a href="http://redjacketarts.com">Redjacket Arts</a></li>
+			<li><a href="http://forgoodstudios.org"><img src="'.$mod_path.'/images/studios.png" alt="Forgood Studios" /></a></li>
+			<li><a href="http://housing.forgoodstudios.org"><img src="'.$mod_path.'/images/housing.png" alt="Forgood Housing" /></a></li>
+			<li><a href="http://reddit.com/r/forgoodideas"><img src="'.$mod_path.'/images/ideas.png" alt="Forgood Ideas" /></a></li>
+			<li><a href="http://forgoodaccounts.pairsite.com"><img src="'.$mod_path.'/images/accounts.png" alt="Forgood Accounts" /></a></li>
+			<li><a href="http://redjacketarts.com"><img src="'.$mod_path.'/images/redjacket.png" alt="Redjacket Arts" /></a></li>
 		</ul>
 		<div class="display-panel-footer">
 			<a href="https://forgoodaccounts.pairsite.com/site-descriptions">Site Descriptions</a>
