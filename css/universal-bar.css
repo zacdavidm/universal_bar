@@ -67,6 +67,14 @@
 	display:block;
 }
 
+.universal-bar #toggle-sites-list .display-panel{
+	background-color:#515050;
+}
+
+.universal-bar #toggle-sites-list ul.sites-list{
+	padding:1rem;
+}
+
 .display-panel .display-panel-footer{
 	border-top:1px solid #808080;
 	text-align:center;
