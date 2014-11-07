@@ -71,6 +71,10 @@
 	background-color:#515050;
 }
 
+.universal-bar #toggle-sites-list .display-panel-footer{
+	background-color:#fff;
+}
+
 .universal-bar #toggle-sites-list ul.sites-list{
 	padding:1rem;
 }
