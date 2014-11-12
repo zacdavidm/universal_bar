@@ -26,7 +26,7 @@ function universal_bar_page_alter(&$page){
 	}
 	$sites_list='
 	<div class="display-panel">
-		<ul class="sites-list small-block-grid-1 menu">
+		<ul class="sites-list small-block-grid-3 menu">
 			<li><a href="http://forgoodstudios.org"><img src="'.$mod_path.'/images/studios.png" alt="Forgood Studios" /></a></li>
 			<li><a href="http://housing.forgoodstudios.org"><img src="'.$mod_path.'/images/housing.png" alt="Forgood Housing" /></a></li>
 			<li><a href="http://reddit.com/r/forgoodideas"><img src="'.$mod_path.'/images/ideas.png" alt="Forgood Ideas" /></a></li>
