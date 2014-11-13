@@ -75,12 +75,18 @@
 	padding:1rem;
 }
 
+.universal-bar #toggle-sites-list ul.sites-list a{
+	display:block;
+	text-align:center;
+}
+
 .universal-bar #toggle-sites-list ul.sites-list a span{
 	color:#222;
 	font-size:.85rem;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis;
+	display:block;
 }
 
 .display-panel .display-panel-footer{
