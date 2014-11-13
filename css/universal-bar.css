@@ -75,6 +75,14 @@
 	padding:1rem;
 }
 
+.universal-bar #toggle-sites-list ul.sites-list a span{
+	color:#222;
+	font-size:.85rem;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
 .display-panel .display-panel-footer{
 	border-top:1px solid #808080;
 	text-align:center;
