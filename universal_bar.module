@@ -18,11 +18,11 @@ function universal_bar_page_alter(&$page){
 	$account_user="";
 	$feedback_ref=urlencode(curPageURL());
 	if(user_is_logged_in()){
-		$account_user='<li><a href="https://forgoodaccounts.pairsite.com/user">Account</a></li>';
-		$account_in_out='<a href="https://forgoodaccounts.pairsite.com/user/logout">Sign Out</a>';
+		$account_user='<li>'.l(t('Account'), 'https://forgoodaccounts.pairsite.com/user').'</li>';
+		$account_in_out=l(t('Sign Out'), 'caslogout', array('query' => drupal_get_destination()));
 	}else{
-		$account_user='<li><a href="https://forgoodaccounts.pairsite.com/user/register" class="button small">Create Account</a></li>';
-		$account_in_out='<a href="https://forgoodaccounts.pairsite.com/user/login">Sign In</a>';
+		$account_user='<li>'.l(t('Create Account'), 'https://forgoodaccounts.pairsite.com/user/register', array('attributes' => array('class' => array('button', 'small')))).'</li>';
+		$account_in_out=l(t('Sign In'), 'cas', array('query' => drupal_get_destination()));
 	}
 	$sites_list='
 	<div class="display-panel">
