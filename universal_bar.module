@@ -34,7 +34,7 @@ function universal_bar_page_alter(&$page){
         </a>
       </li>
 			<li>
-        <a title="Housing" href="http://housing.forgoodstudios.org">
+        <a title="Housing" href="http://forgoodhousing.org">
           <img src="'.$mod_path.'/images/housing.png" alt="Forgood Housing" />
           <span>Housing</span>
         </a>
