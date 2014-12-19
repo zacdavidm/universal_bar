@@ -1,5 +1,39 @@
 <?php
 
+function universal_bar_menu(){
+  $items = array();
+
+  $items['admin/config/system/universal_bar'] = array(
+    'title' => 'Universal Bar',
+    'description' => 'Configuration for Universal Bar settings',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('universal_bar_form'),
+    'access arguments' => array('access administration pages'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+function universal_bar_form($form, &$form_state) {
+  $form['universal_bar_name'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Universal Bar Name'),
+    '#default_value' => variable_get('universal_bar_name'),
+    '#description' => t('The name of the entity to display on the universal bar.'),
+  );
+
+  $form['universal_bar_sites'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Universal Bar Sites List'),
+    '#default_value' => variable_get('universal_bar_sites'),
+    '#description' => t('HTML content of the sites list.'),
+    'format'=> filter_default_format(),
+  );
+
+  return system_settings_form($form);
+}
+
 function curPageURL() {
  $pageURL = 'http';
  if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"]== "on") {$pageURL .= "s";}

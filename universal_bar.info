@@ -2,6 +2,8 @@ name = Forgood Universal Bar
 description = Universal bar to connect all Forgood Sites
 core = 7.x
 
+configure = admin/config/system/universal_bar
+
 stylesheets[all][] = css/universal-bar.css
 stylesheets[all][] = css/font-awesome.min.css
 
