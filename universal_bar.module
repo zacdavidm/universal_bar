@@ -107,6 +107,13 @@ function universal_bar_page_alter(&$page){
     '#markup'=>
     '<div class="universal-bar">
 		<div class="row">
+		  <div class="left">
+			<ul class="title-area">
+			  <li class="name">
+			    <a href="/" rel="home"><img class="logo" src="'.$mod_path.'/images/forgood.png" alt="Forgood Studios"></a>
+			  </li>
+			</ul>
+		  </div>
 			<div class="right">
 				<ul class="menu inline-list">
 					'.$account_user.'
