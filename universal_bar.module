@@ -52,11 +52,11 @@ function universal_bar_page_alter(&$page){
 	$account_user="";
 	$feedback_ref=urlencode(curPageURL());
 	if(user_is_logged_in()){
-		$account_user='<li>'.l(t('Account'), 'https://forgoodaccounts.pairsite.com/user').'</li>';
-		$account_in_out=l(t('Sign Out'), 'caslogout', array('query' => drupal_get_destination()));
+		$account_user='<a href="https://forgoodaccounts.pairsite.com/user"></a></a><i class="fa fa-user"></i><span class="show-for-large-up">Account</span></a>';
+		$account_in_out='<a href="/caslogout"></a></a><i class="fa fa-sign-out"></i><span class="show-for-large-up">Sign Out</span></a>';
 	}else{
-		$account_user='<li>'.l(t('Create Account'), 'https://forgoodaccounts.pairsite.com/user/register', array('attributes' => array('class' => array('button', 'small')))).'</li>';
-		$account_in_out=l(t('Sign In'), 'cas', array('query' => drupal_get_destination()));
+		$account_user='<a class="button small" href="https://forgoodaccounts.pairsite.com/user/register"></a></a><i class="fa fa-user"></i><span class="show-for-large-up">'.l(t('Create Account'), '', array('attributes' => array('class' => array('button', 'small')))).'';
+		$account_in_out='<a href="/caslogout"></a></a><i class="fa fa-sign-in"></i><span class="show-for-large-up">Sign In</span></a>';
 	}
 	$sites_list='
 	<div class="display-panel">
@@ -116,14 +116,14 @@ function universal_bar_page_alter(&$page){
 		  </div>
 			<div class="right">
 				<ul class="menu inline-list">
-					'.$account_user.'
-					<li id="toggle-sites-list"><a title="Sites"><i class="fa fa-th"><span class="element-invisible">Sites</span></i></a>
+					<li>'.$account_user.'</li>
+					<li id="toggle-sites-list"><a title="Sites"><i class="fa fa-th"><span class="show-for-large-up">Sites</span></i></a>
 						'.$sites_list.'
 					</li>
-					<!--li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="element-invisible">Notifications</span></i><span class="notif-count"></span></a>
+					<!--li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="show-for-large-up">Notifications</span></i><span class="notif-count"></span></a>
 						'.$notifications.'
 					</li-->
-					<li><a href="https://forgoodaccounts.pairsite.com/feedback?ref='.$feedback_ref.'" title="Feedback"><i class="fa fa-question-circle"><span class="element-invisible">Feedback</span></i></a>
+					<li><a href="https://forgoodaccounts.pairsite.com/feedback?ref='.$feedback_ref.'" title="Feedback"><i class="fa fa-question-circle"><span class="show-for-large-up">Feedback</span></i></a>
 						'.$notifications.'
 					</li>
 					<li>'.$account_in_out.'</li>
