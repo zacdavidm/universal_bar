@@ -19,14 +19,19 @@
 	margin:0;
 }
 
-.universal-bar ul.menu.inline-list > li > a{
-	line-height:45px;
+.universal-bar ul.menu.inline-list > li > a:not(.button){
 	color:#222;
-	padding:0 1rem;
 }
 
 .universal-bar ul.menu.inline-list > li > a{
+	line-height:45px;
+	padding:0 1rem;
 	height:45px;
+	display:inline-block;
+}
+
+.universal-bar ul.menu.inline-list > li > a span{
+	margin-left:.25rem;
 }
 
 .universal-bar ul.menu.inline-list > li > a.button{
