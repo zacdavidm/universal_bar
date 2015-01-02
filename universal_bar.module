@@ -52,11 +52,11 @@ function universal_bar_page_alter(&$page){
 	$account_user="";
 	$feedback_ref=urlencode(curPageURL());
 	if(user_is_logged_in()){
-		$account_user='<a href="https://forgoodaccounts.pairsite.com/user"></a></a><i class="fa fa-user"></i><span class="show-for-large-up">Account</span></a>';
-		$account_in_out='<a href="/caslogout"></a></a><i class="fa fa-sign-out"></i><span class="show-for-large-up">Sign Out</span></a>';
+		$account_user='<a href="https://forgoodaccounts.pairsite.com/user"><i class="fa fa-user"></i><span class="show-for-large-up">Account</span></a>';
+		$account_in_out='<a href="/caslogout"><i class="fa fa-sign-out"></i><span class="show-for-large-up">Sign Out</span></a>';
 	}else{
-		$account_user='<a class="button small" href="https://forgoodaccounts.pairsite.com/user/register"></a></a><i class="fa fa-user"></i><span class="show-for-large-up">'.l(t('Create Account'), '', array('attributes' => array('class' => array('button', 'small')))).'';
-		$account_in_out='<a href="/caslogout"></a></a><i class="fa fa-sign-in"></i><span class="show-for-large-up">Sign In</span></a>';
+		$account_user=l(t('Create Account'), 'https://forgoodaccounts.pairsite.com/user/register', array('attributes' => array('class' => array('button', 'small'))));
+		$account_in_out='<a href="/caslogout"><i class="fa fa-sign-in"></i><span class="show-for-large-up">Sign In</span></a>';
 	}
 	$sites_list='
 	<div class="display-panel">
