@@ -117,7 +117,7 @@ function universal_bar_page_alter(&$page){
 			<div class="right">
 				<ul class="menu inline-list">
 					<li>'.$account_user.'</li>
-					<li id="toggle-sites-list"><a title="Sites"><i class="fa fa-th"><span class="show-for-large-up">Sites</span></i></a>
+					<li id="toggle-sites-list"><a title="Sites"><i class="fa fa-th"><span class="show-for-medium-up">Sites</span></i></a>
 						'.$sites_list.'
 					</li>
 					<!--li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="show-for-medium-up">Notifications</span></i><span class="notif-count"></span></a>
