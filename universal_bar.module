@@ -55,7 +55,7 @@ function universal_bar_page_alter(&$page){
 		$account_user='<a href="https://forgoodaccounts.pairsite.com/user"><i class="fa fa-user"></i><span class="show-for-medium-up">Account</span></a>';
 		$account_in_out='<a href="/caslogout"><i class="fa fa-sign-out"></i><span class="show-for-medium-up">Sign Out</span></a>';
 	}else{
-		$account_user='<a class="button small" href="https://forgoodaccounts.pairsite.com/user/register"><i class="fa fa-plus"></i><i class="fa fa-user"></i><span class="show-for-medium-up">Create Account/span></a>';
+		$account_user='<a class="button small" href="https://forgoodaccounts.pairsite.com/user/register"><i class="fa fa-plus"></i><i class="fa fa-user"></i><span class="show-for-medium-up">Create Account</span></a>';
 		$account_in_out='<a href="/cas/login"><i class="fa fa-sign-in"></i><span class="show-for-medium-up">Sign In</span></a>';
 	}
 	$sites_list='
