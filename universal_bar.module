@@ -59,7 +59,7 @@ function universal_bar_page_alter(&$page){
 		$account_in_out='<a href="/cas/login"><i class="fa fa-sign-in"></i><span class="show-for-medium-up">Sign In</span></a>';
 	}
 	$sites_list='
-	<div id="sites-reveal-drawer" class="reveal-modal reveals-drawer" data-reveal>
+	<div id="sites-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
 		<ul class="sites-list small-block-grid-3 menu">
 		  <li>
 			<a title="Forgood Studios" href="http://forgoodstudios.org">
