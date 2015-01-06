@@ -95,6 +95,7 @@ function universal_bar_page_alter(&$page){
 		<div class="reveal-drawer-footer">
 			<a href="https://forgoodaccounts.pairsite.com/site-descriptions">Site Descriptions</a>
 		</div>
+		<a class="close-reveal-modal">&#215;</a>
 	</div>';
 	$notifications=
 	'<div class="display-panel">
