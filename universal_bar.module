@@ -59,49 +59,49 @@ function universal_bar_page_alter(&$page){
 		$account_in_out='<a href="/cas/login"><i class="fa fa-sign-in"></i><span class="show-for-medium-up">Sign In</span></a>';
 	}
 	$sites_list='
-	<div class="display-panel">
+	<div id="sites-reveal-drawer" class="reveal-modal reveals-drawer" data-reveal>
 		<ul class="sites-list small-block-grid-3 menu">
-			<li>
-        <a title="Forgood Studios" href="http://forgoodstudios.org">
-          <img src="'.$mod_path.'/images/studios.png" alt="Forgood Studios" />
-          <span>Forgood Studios</span>
-        </a>
-      </li>
-			<li>
-        <a title="Housing" href="http://forgoodhousing.org">
-          <img src="'.$mod_path.'/images/housing.png" alt="Forgood Housing" />
-          <span>Housing</span>
-        </a>
-      </li>
-			<li>
-        <a title="Forgood Ideas" href="http://reddit.com/r/forgoodideas">
-          <img src="'.$mod_path.'/images/ideas.png" alt="Forgood Ideas" />
-          <span>Ideas</span>
-        </a>
-      </li>
-			<li>
-        <a title="Forgood Accounts" href="http://forgoodaccounts.pairsite.com">
-          <img src="'.$mod_path.'/images/accounts.png" alt="Forgood Accounts" />
-          <span>Accounts</span>
-        </a>
-      </li>
-			<li>
-        <a title="Redjacket Arts" href="http://redjacketarts.com">
-          <img src="'.$mod_path.'/images/redjacket.png" alt="Redjacket Arts" />
-          <span>Redjacket Arts</span>
-        </a>
-      </li>
+		  <li>
+			<a title="Forgood Studios" href="http://forgoodstudios.org">
+			  <img src="'.$mod_path.'/images/studios.png" alt="Forgood Studios" />
+			  <span>Forgood Studios</span>
+			</a>
+		  </li>
+		  <li>
+			<a title="Housing" href="http://forgoodhousing.org">
+			  <img src="'.$mod_path.'/images/housing.png" alt="Forgood Housing" />
+			  <span>Housing</span>
+			</a>
+		  </li>
+		  <li>
+			<a title="Forgood Ideas" href="http://reddit.com/r/forgoodideas">
+			  <img src="'.$mod_path.'/images/ideas.png" alt="Forgood Ideas" />
+			  <span>Ideas</span>
+			</a>
+		  </li>
+		  <li>
+			<a title="Forgood Accounts" href="http://forgoodaccounts.pairsite.com">
+			  <img src="'.$mod_path.'/images/accounts.png" alt="Forgood Accounts" />
+			  <span>Accounts</span>
+			</a>
+		  </li>
+		  <li>
+			<a title="Redjacket Arts" href="http://redjacketarts.com">
+			  <img src="'.$mod_path.'/images/redjacket.png" alt="Redjacket Arts" />
+			  <span>Redjacket Arts</span>
+			</a>
+		  </li>
 		</ul>
-		<div class="display-panel-footer">
+		<div class="reveal-drawer-footer">
 			<a href="https://forgoodaccounts.pairsite.com/site-descriptions">Site Descriptions</a>
 		</div>
 	</div>';
 	$notifications=
 	'<div class="display-panel">
-	<div id="notifications"></div>
-	<div class="display-panel-footer">
-		<a href="https://forgoodaccounts.pairsite.com/notifications">Notifications Manager</a>
-	</div>
+		<div id="notifications"></div>
+		<div class="display-panel-footer">
+			<a href="https://forgoodaccounts.pairsite.com/notifications">Notifications Manager</a>
+		</div>
 	</div>';
     $page['page_top']['universal_bar']=array(
     '#markup'=>
@@ -117,7 +117,7 @@ function universal_bar_page_alter(&$page){
 			<div class="right">
 				<ul class="menu inline-list">
 					<li>'.$account_user.'</li>
-					<li id="toggle-sites-list"><a title="Sites"><i class="fa fa-th"><span class="show-for-medium-up">Sites</span></i></a>
+					<li><a title="Sites" href="#" data-reveal-id="sites-reveal-drawer"><i class="fa fa-th"><span class="show-for-medium-up">Sites</span></i></a>
 						'.$sites_list.'
 					</li>
 					<!--li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="show-for-medium-up">Notifications</span></i><span class="notif-count"></span></a>
