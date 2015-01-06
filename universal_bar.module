@@ -125,7 +125,6 @@ function universal_bar_page_alter(&$page){
 						'.$notifications.'
 					</li-->
 					<li><a href="https://forgoodaccounts.pairsite.com/feedback?ref='.$feedback_ref.'" title="Feedback"><i class="fa fa-question-circle"><span class="show-for-medium-up">Feedback</span></i></a>
-						'.$notifications.'
 					</li>
 					<li>'.$account_in_out.'</li>
 				</ul>
