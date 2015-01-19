@@ -47,16 +47,28 @@ function curPageURL() {
 }
 function universal_bar_page_alter(&$page){
 	$mod_path="/".drupal_get_path('module', 'universal_bar');
-
+  $site_domain=check_plain($_SERVER['HTTP_HOST']);
 	$account_in_out;
 	$account_user="";
 	$feedback_ref=urlencode(curPageURL());
 	if(user_is_logged_in()){
-		$account_user='<a href="https://forgoodaccounts.pairsite.com/user"><i class="fa fa-user"></i><span class="show-for-medium-up">Account</span></a>';
+		$account_user='<a href="#" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-user"></i><span class="show-for-medium-up">Account</span></a>
+    <div id="account_user-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
+      <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/user?response_type=embed"></iframe>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>';
 		$account_in_out='<a href="/caslogout"><i class="fa fa-sign-out"></i><span class="show-for-medium-up">Sign Out</span></a>';
 	}else{
-		$account_user='<a class="button small" href="https://forgoodaccounts.pairsite.com/user/register"><i class="fa fa-plus"></i><i class="fa fa-user"></i><span class="show-for-medium-up">Create Account</span></a>';
-		$account_in_out='<a href="/cas/login"><i class="fa fa-sign-in"></i><span class="show-for-medium-up">Sign In</span></a>';
+		$account_user='<a class="button small" href="#" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-plus"></i><i class="fa fa-user"></i><span class="show-for-medium-up">Create Account</span></a>
+    <div id="account_user-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
+      <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/user/register?response_type=embed"></iframe>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>';
+		$account_in_out='<a href="#" data-reveal-id="account_in_out-reveal-drawer"><i class="fa fa-sign-in"></i><span class="show-for-medium-up">Sign In</span></a>
+    <div id="account_in_out-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
+      <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/cas/login?response_type=embed"></iframe>
+      <a class="close-reveal-modal">&#215;</a>
+    </div>';
 	}
 	$sites_list='
 	<div id="sites-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
@@ -97,13 +109,11 @@ function universal_bar_page_alter(&$page){
 		</div>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>';
-	$notifications=
-	'<div class="display-panel">
-		<div id="notifications"></div>
-		<div class="display-panel-footer">
-			<a href="https://forgoodaccounts.pairsite.com/notifications">Notifications Manager</a>
-		</div>
-	</div>';
+	$notifications='
+  <div id="notifications-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
+		<iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/notifications/'.$site_domain.'?response_type=embed"></iframe>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>';
     $page['page_top']['universal_bar']=array(
     '#markup'=>
     '<div class="universal-bar">
@@ -121,7 +131,7 @@ function universal_bar_page_alter(&$page){
 					<li><a title="Sites" href="#" data-reveal-id="sites-reveal-drawer"><i class="fa fa-th"><span class="show-for-medium-up">Sites</span></i></a>
 						'.$sites_list.'
 					</li>
-					<!--li id="toggle-notifications"><a title="Notifications"><i class="fa fa-bell"><span class="show-for-medium-up">Notifications</span></i><span class="notif-count"></span></a>
+					<!--li><a title="Notifications" href="#" data-reveal-id="notifications-reveal-drawer"><i class="fa fa-bell"><span class="show-for-medium-up">Notifications</span></i></a>
 						'.$notifications.'
 					</li-->
 					<li><a href="https://forgoodaccounts.pairsite.com/feedback?ref='.$feedback_ref.'" title="Feedback"><i class="fa fa-question-circle"><span class="show-for-medium-up">Feedback</span></i></a>
