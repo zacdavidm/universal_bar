@@ -140,7 +140,7 @@ function universal_bar_page_alter(&$page){
 					<!--li><a title="Notifications" href="#" data-reveal-id="notifications-reveal-drawer"><i class="fa fa-bell"><span class="show-for-medium-up">Notifications</span></i></a>
 						'.$notifications.'
 					</li-->
-					<li><a href="#" title="Feedback" data-reveal-id="feedback-reveal-drawer"><i class="fa fa-question-circle"><span class="show-for-medium-up">Feedback</span></i></a>
+					<li><a href="#" title="Feedback" data-reveal-id="feedback-reveal-drawer"><i class="fa fa-question-circle"><span class="show-for-medium-up">Feedback</span></i></a>'.$feedback.'
 					</li>
 					<li>'.$account_in_out.'</li>
 				</ul>
