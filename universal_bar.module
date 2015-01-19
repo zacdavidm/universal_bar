@@ -114,6 +114,12 @@ function universal_bar_page_alter(&$page){
 		<iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/notifications/'.$site_domain.'?response_type=embed"></iframe>
     <a class="close-reveal-modal">&#215;</a>
   </div>';
+  $feedback='
+  <div id="feedback-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
+    <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/feedback?response_type=embed&ref='.$feedback_ref.'"></iframe>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+  ';
     $page['page_top']['universal_bar']=array(
     '#markup'=>
     '<div class="universal-bar">
@@ -134,7 +140,7 @@ function universal_bar_page_alter(&$page){
 					<!--li><a title="Notifications" href="#" data-reveal-id="notifications-reveal-drawer"><i class="fa fa-bell"><span class="show-for-medium-up">Notifications</span></i></a>
 						'.$notifications.'
 					</li-->
-					<li><a href="https://forgoodaccounts.pairsite.com/feedback?ref='.$feedback_ref.'" title="Feedback"><i class="fa fa-question-circle"><span class="show-for-medium-up">Feedback</span></i></a>
+					<li><a href="#" title="Feedback" data-reveal-id="feedback-reveal-drawer"><i class="fa fa-question-circle"><span class="show-for-medium-up">Feedback</span></i></a>
 					</li>
 					<li>'.$account_in_out.'</li>
 				</ul>
