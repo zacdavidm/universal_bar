@@ -61,6 +61,7 @@
 	height:100%;
 	transition:left .2s ease;
 	-webkit-overflow-scrolling:touch;
+	overflow:auto;
 }
 
 .reveal-modal.side-drawer.open{
