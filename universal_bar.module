@@ -57,7 +57,7 @@ function universal_bar_page_alter(&$page){
       <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/user?response_type=embed"></iframe>
       <a class="close-reveal-modal">&#215;</a>
     </div>';
-		$account_in_out='<a href="/cas/logout"><i class="fa fa-sign-out"></i><span class="show-for-medium-up">Sign Out</span></a>';
+		$account_in_out='<a href="/caslogout"><i class="fa fa-sign-out"></i><span class="show-for-medium-up">Sign Out</span></a>';
 	}else{
 		$account_user='<a class="button small" href="#" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-plus"></i><i class="fa fa-user"></i><span class="show-for-medium-up">Create Account</span></a>
     <div id="account_user-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
