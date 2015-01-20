@@ -64,7 +64,7 @@ function universal_bar_page_alter(&$page){
       <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/user/register?response_type=embed"></iframe>
       <a class="close-reveal-modal">&#215;</a>
     </div>';
-		$account_in_out='<a href="/cas?destination='.drupal_get_destination()=>"destination".'"><i class="fa fa-sign-in"></i><span class="show-for-medium-up">Sign In</span></a>';
+		$account_in_out='<a href="/cas?'.drupal_http_build_query(drupal_get_query_parameters()).'"><i class="fa fa-sign-in"></i><span class="show-for-medium-up">Sign In</span></a>';
 	}
 	$sites_list='
 	<div id="sites-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
