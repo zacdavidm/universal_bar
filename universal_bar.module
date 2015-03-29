@@ -48,14 +48,14 @@ function universal_bar_page_alter(&$page){
 	$account_user="";
 	$feedback_ref=urlencode(curPageURL());
 	if(user_is_logged_in()){
-		$account_user='<a href="#" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-user"></i><span class="show-for-medium-up">Account</span></a>
+		$account_user='<a href="https://forgoodaccounts.pairsite.com/user" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-user"></i><span class="show-for-medium-up">Account</span></a>
     <div id="account_user-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
       <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/user?response_type=embed"></iframe>
       <a class="close-reveal-modal">&#215;</a>
     </div>';
 		$account_in_out='<a href="/caslogout"><i class="fa fa-sign-out"></i><span class="show-for-medium-up">Sign Out</span></a>';
 	}else{
-		$account_user='<a class="button small" href="#" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-plus"></i><i class="fa fa-user"></i><span class="show-for-medium-up">Create Account</span></a>
+		$account_user='<a class="button small" href="#" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-user-plus"></i><span class="show-for-medium-up">Create Account</span></a>
     <div id="account_user-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
       <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/user/register?response_type=embed"></iframe>
       <a class="close-reveal-modal">&#215;</a>
@@ -127,16 +127,16 @@ function universal_bar_page_alter(&$page){
 		  </div>
 			<div class="right">
 				<ul class="menu inline-list">
-					<li>'.$account_user.'</li>
 					<li><a title="Sites" href="#" data-reveal-id="sites-reveal-drawer"><i class="fa fa-th"></i><span class="show-for-medium-up">Sites</span></a>
 						'.$sites_list.'
 					</li>
-					<li><a title="Notifications" href="#" data-reveal-id="notifications-reveal-drawer"><i class="fa fa-bell"></i><span class="show-for-medium-up">Notifications</span></a>
+					<li><a title="Notifications" href="https://forgoodaccounts.pairsite.com/notifications/all" data-reveal-id="notifications-reveal-drawer"><i class="fa fa-bell"></i><span class="show-for-medium-up">Notifications</span></a>
 						'.$notifications.'
 					</li>
-					<li><a href="#" title="Feedback" data-reveal-id="feedback-reveal-drawer"><i class="fa fa-question-circle"></i><span class="show-for-medium-up">Feedback</span></a>'.$feedback.'
+					<li><a href="https://forgoodaccounts.pairsite.com/feedback" title="Feedback" data-reveal-id="feedback-reveal-drawer"><i class="fa fa-question-circle"></i><span class="show-for-medium-up">Feedback</span></a>'.$feedback.'
 					</li>
 					<li>'.$account_in_out.'</li>
+          <li>'.$account_user.'</li>
 				</ul>
 			</div>
 		</div>

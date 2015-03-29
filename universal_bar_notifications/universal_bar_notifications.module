@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Universal Bar Notifications feature.
+ */
+
+include_once 'universal_bar_notifications.features.inc';
