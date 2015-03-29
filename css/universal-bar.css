@@ -108,7 +108,7 @@
 	border:0;
 }
 
-.side-drawer .close-reveal-modal {
+.side-drawer.reveal-modal .close-reveal-modal {
   font-size: 2.5rem;
 }
 
