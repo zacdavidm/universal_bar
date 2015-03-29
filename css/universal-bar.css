@@ -119,10 +119,6 @@
 	border-bottom: 1px solid rgb(162, 162, 162);
 }
 
-.notif-ication a.unread{
-	background-color:#f0f0ff;
-}
-
 .notif-ication .notif-message p{
 	display:inline;
 }
