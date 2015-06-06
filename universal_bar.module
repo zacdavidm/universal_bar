@@ -46,6 +46,7 @@ function universal_bar_page_alter(&$page){
 	$site_domain=check_plain($_SERVER['HTTP_HOST']);
 	$account;
 	$embed="?response_type=embed";
+	$notification_source="https://forgoodaccounts.pairsite.com/notifications/";
 	$feedback_source="https://forgoodaccounts.pairsite.com/feedback";
 	$feedback_ref=urlencode(curPageURL());
 	if(user_is_logged_in()){
@@ -103,7 +104,7 @@ function universal_bar_page_alter(&$page){
 	</div>';
 	$notifications='
   <div id="notifications-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-		<iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/notifications/'.$site_domain.'?response_type=embed"></iframe>
+		<iframe class="fill-drawer" src="'.$notification_source.$site_domain.$embed.'"></iframe>
     <div class="action-panel">
       <a class="close-reveal-modal"><i class="fa fa-close"></i></a>
       <a target="_blank" href="'.$notification_source.'/'.$site_domain.'"><i class="fa fa-external-link"></i></a>
