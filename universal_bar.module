@@ -43,26 +43,24 @@ function curPageURL() {
 }
 function universal_bar_page_alter(&$page){
 	$mod_path="/".drupal_get_path('module', 'universal_bar');
-  $site_domain=check_plain($_SERVER['HTTP_HOST']);
-	$account_in_out;
-	$account_user="";
+	$site_domain=check_plain($_SERVER['HTTP_HOST']);
+	$account;
+	$embed="?response_type=embed";
+	$feedback_source="https://forgoodaccounts.pairsite.com/feedback";
 	$feedback_ref=urlencode(curPageURL());
 	if(user_is_logged_in()){
-		$account_user='<a href="https://forgoodaccounts.pairsite.com/user" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-user"></i><span class="show-for-medium-up">Account</span></a>
-    <div id="account_user-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-      <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/user?response_type=embed"></iframe>
-      <a class="close-reveal-modal">&#215;</a>
-    </div>';
-		$account_in_out='<a href="/caslogout"><i class="fa fa-sign-out"></i><span class="show-for-medium-up">Sign Out</span></a>';
+		$account='<a href="https://forgoodaccounts.pairsite.com/user" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-user"></i><span class="show-for-medium-up">Account</span></a>
+		<div id="account_user-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
+		  <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/user?response_type=embed"></iframe>
+			<div class="action-panel">
+			  <a class="close-reveal-modal"><i class="fa fa-close"></i></a>
+			  <a target="_blank" href="https://forgoodaccounts.pairsite.com/user"><i class="fa fa-external-link"></i></a>
+			</div>
+		</div>';
 	}else{
-		$account_user='<a class="button small" href="#" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-user-plus"></i><span class="show-for-medium-up">Create Account</span></a>
-    <div id="account_user-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-      <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/user/register?response_type=embed"></iframe>
-      <a class="close-reveal-modal">&#215;</a>
-    </div>';
-    $destination = drupal_get_destination();
-    $destination = $destination['destination'];
-		$account_in_out='<a href="/cas?destination='.$destination.'"><i class="fa fa-sign-in"></i><span class="show-for-medium-up">Sign In</span></a>';
+		$destination = drupal_get_destination();
+		$destination = $destination['destination'];
+		$account='<a class="login-button" href="/cas?destination='.$destination.'"><i class="fa fa-user"></i><span class="show-for-medium-up">Log In</span></a>';
 	}
 	$sites_list='
 	<div id="sites-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
@@ -98,20 +96,26 @@ function universal_bar_page_alter(&$page){
 			</a>
 		  </li>
 		</ul>
-		<div class="reveal-drawer-footer">
-			<a href="https://forgoodaccounts.pairsite.com/site-descriptions">Site Descriptions</a>
+		<div class="action-panel">
+		  <a class="close-reveal-modal"><i class="fa fa-close"></i></a>
+		  <a target="_blank" href="https://forgoodaccounts.pairsite.com/site-descriptions"><i class="fa fa-external-link"></i></a>
 		</div>
-		<a class="close-reveal-modal">&#215;</a>
 	</div>';
 	$notifications='
   <div id="notifications-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
 		<iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/notifications/'.$site_domain.'?response_type=embed"></iframe>
-    <a class="close-reveal-modal">&#215;</a>
+    <div class="action-panel">
+      <a class="close-reveal-modal"><i class="fa fa-close"></i></a>
+      <a target="_blank" href="'.$notification_source.'/'.$site_domain.'"><i class="fa fa-external-link"></i></a>
+    </div>
   </div>';
   $feedback='
   <div id="feedback-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-    <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/feedback?response_type=embed&ref='.$feedback_ref.'"></iframe>
-    <a class="close-reveal-modal">&#215;</a>
+    <iframe class="fill-drawer" src="'.$feedback_source.$embed.'&ref='.$feedback_ref.'"></iframe>
+    <div class="action-panel">
+      <a class="close-reveal-modal"><i class="fa fa-close"></i></a>
+      <a target="_blank" href="'.$feedback_source.'"><i class="fa fa-external-link"></i></a>
+    </div>
   </div>
   ';
     $page['page_top']['universal_bar']=array(
@@ -135,8 +139,7 @@ function universal_bar_page_alter(&$page){
 					</li>
 					<li><a href="https://forgoodaccounts.pairsite.com/feedback" title="Feedback" data-reveal-id="feedback-reveal-drawer"><i class="fa fa-question-circle"></i><span class="show-for-medium-up">Feedback</span></a>'.$feedback.'
 					</li>
-					<li>'.$account_in_out.'</li>
-          <li>'.$account_user.'</li>
+					<li>'.$account.'</li>
 				</ul>
 			</div>
 		</div>
