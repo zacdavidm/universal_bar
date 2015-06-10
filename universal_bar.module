@@ -97,7 +97,7 @@ function universal_bar_page_alter(&$page){
 		<iframe class="fill-drawer" src="'.$notification_source.$site_domain.$embed.'"></iframe>
     <div class="action-panel">
       <a class="close-reveal-modal"><i class="fa fa-close"></i></a>
-      <a target="_blank" href="'.$notification_source.'/'.$site_domain.'"><i class="fa fa-external-link"></i></a>
+      <a target="_blank" href="'.$notification_source.$site_domain.'"><i class="fa fa-external-link"></i></a>
     </div>
   </div>';
   $feedback='
