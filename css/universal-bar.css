@@ -65,7 +65,7 @@
 	border-left:0;
 	border-radius:0;
 	width:23rem;
-	max-width:100%;
+	max-width:calc(100% - 3rem);
 	height:100%;
 	transition:left .2s ease;
 	-webkit-overflow-scrolling:touch;
@@ -88,7 +88,13 @@
 }
 
 #sites-reveal-drawer ul.sites-list{
-	padding:1rem;
+	max-height:100%;
+	overflow-y:auto;
+	-webkit-overflow-scrolling:touch;
+}
+
+#sites-reveal-drawer ul.sites-list li{
+	margin-bottom:1rem;
 }
 
 #sites-reveal-drawer ul.sites-list a{
