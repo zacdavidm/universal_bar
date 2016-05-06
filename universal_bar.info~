@@ -1,6 +1,0 @@
-name = Forgood Universal Bar
-description = Universal bar to connect all Forgood Sites
-core = 7.x
-
-stylesheets[all][] = css/universal-bar.css
-

@@ -44,21 +44,19 @@ function curPageURL() {
 function universal_bar_page_alter(&$page){
 	$mod_path="/".drupal_get_path('module', 'universal_bar');
 	$site_domain=check_plain($_SERVER['HTTP_HOST']);
-	$account;
 	$embed="?response_type=embed";
-	$notification_source="https://forgoodaccounts.pairsite.com/notifications/";
-	$feedback_source="https://forgoodaccounts.pairsite.com/feedback";
+	$feedback_source="https://accounts.forgood.io/feedback";
 	$feedback_ref=urlencode(curPageURL());
-	if(user_is_logged_in()){
-		$account='<a href="https://forgoodaccounts.pairsite.com/user" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-user"></i><span class="show-for-medium-up">Account</span></a>
+	if (user_is_logged_in()){
+		$account='<a href="https://accounts.forgood.io/user" data-reveal-id="account_user-reveal-drawer"><i class="fa fa-user"></i><span class="show-for-medium-up">Account</span></a>
 		<div id="account_user-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-		  <iframe class="fill-drawer" src="https://forgoodaccounts.pairsite.com/user?response_type=embed"></iframe>
+		  <iframe class="fill-drawer" src="https://accounts.forgood.io/user?response_type=embed"></iframe>
 			<div class="action-panel">
 			  <a class="close-reveal-modal"><i class="fa fa-close"></i></a>
-			  <a target="_blank" href="https://forgoodaccounts.pairsite.com/user"><i class="fa fa-external-link"></i></a>
+			  <a target="_blank" href="https://accounts.forgood.io/user"><i class="fa fa-external-link"></i></a>
 			</div>
 		</div>';
-	}else{
+	} else {
 		$destination = drupal_get_destination();
 		$destination = $destination['destination'];
 		$account='<a class="login-button" href="/cas?destination='.$destination.'"><i class="fa fa-user"></i><span class="show-for-medium-up">Log In</span></a>';
@@ -67,39 +65,26 @@ function universal_bar_page_alter(&$page){
 	<div id="sites-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
 		<ul class="sites-list small-block-grid-1 menu">
 		  <li>
-			<a title="Forgood Studios" href="http://forgoodstudios.org">
+			<a title="Forgood Studios" href="https://forgood.io">
 			  <img src="'.$mod_path.'/images/studios.png" alt="Forgood Studios" />
 			</a>
 		  </li>
 		  <li>
-			<a title="Housing" href="http://forgoodhousing.org">
+			<a title="Housing" href="https://housing.forgood.io">
 			  <img src="'.$mod_path.'/images/housing.png" alt="Forgood Housing" />
 			</a>
 		  </li>
 		  <li>
-			<a title="Forgood Accounts" href="http://forgoodaccounts.pairsite.com">
+			<a title="Forgood Accounts" href="https://accounts.forgood.io">
 			  <img src="'.$mod_path.'/images/accounts.png" alt="Forgood Accounts" />
-			</a>
-		  </li>
-		  <li>
-			<a title="Redjacket Arts" href="http://redjacketarts.com">
-			  <img src="'.$mod_path.'/images/redjacket.png" alt="Redjacket Arts" />
 			</a>
 		  </li>
 		</ul>
 		<div class="action-panel">
 		  <a class="close-reveal-modal"><i class="fa fa-close"></i></a>
-		  <a target="_blank" href="https://forgoodaccounts.pairsite.com/site-descriptions"><i class="fa fa-external-link"></i></a>
+		  <a target="_blank" href="https://accounts.forgood.io/site-descriptions"><i class="fa fa-external-link"></i></a>
 		</div>
 	</div>';
-	$notifications='
-  <div id="notifications-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
-		<iframe class="fill-drawer" src="'.$notification_source.$site_domain.$embed.'"></iframe>
-    <div class="action-panel">
-      <a class="close-reveal-modal"><i class="fa fa-close"></i></a>
-      <a target="_blank" href="'.$notification_source.$site_domain.'"><i class="fa fa-external-link"></i></a>
-    </div>
-  </div>';
   $feedback='
   <div id="feedback-reveal-drawer" class="reveal-modal side-drawer" data-reveal>
     <iframe class="fill-drawer" src="'.$feedback_source.$embed.'&ref='.$feedback_ref.'"></iframe>
@@ -125,10 +110,7 @@ function universal_bar_page_alter(&$page){
 					<li><a title="Sites" href="#" data-reveal-id="sites-reveal-drawer"><i class="fa fa-th"></i><span class="show-for-medium-up">Sites</span></a>
 						'.$sites_list.'
 					</li>
-					<li><a title="Notifications" href="https://forgoodaccounts.pairsite.com/notifications/all" data-reveal-id="notifications-reveal-drawer"><i class="fa fa-bell"></i><span class="show-for-medium-up">Notifications</span></a>
-						'.$notifications.'
-					</li>
-					<li><a href="https://forgoodaccounts.pairsite.com/feedback" title="Feedback" data-reveal-id="feedback-reveal-drawer"><i class="fa fa-question-circle"></i><span class="show-for-medium-up">Feedback</span></a>'.$feedback.'
+					<li><a href="https://accounts.forgood.io/feedback" title="Feedback" data-reveal-id="feedback-reveal-drawer"><i class="fa fa-question-circle"></i><span class="show-for-medium-up">Feedback</span></a>'.$feedback.'
 					</li>
 					<li>'.$account.'</li>
 				</ul>
